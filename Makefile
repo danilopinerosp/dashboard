@@ -22,7 +22,7 @@ run dev:
 	@( cd src && uvicorn main:dashboard_app --reload --ws-ping-timeout=120 --timeout-keep-alive=120)
 
 run_prod:
-	@(cd src && uvicorn main:dashboard_app --host 0.0.0.0 --port 8000)
+	@(cd src && uvicorn main:dashboard_app --host 0.0.0.0 --port 3000)
 
 reqs:
 	@pip install -r requirements.in -U
