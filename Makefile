@@ -46,11 +46,11 @@ bandit:
 	@bandit -r ./src -x tests || true
 
 isort:
-	@isort --check --skip="./src/tests/*" .
+	@isort --check --skip="./src/tests/*" --skip="./venv" .
 
 check_tests:
-	@( cd src && python -m pytest --cov-config=.coveragerc --cov-report term-missing --cov . -ra ./tests)
-	@( cd src && python -m pytest  -ra ./tests)
+	@( cd src && python3 -m pytest --cov-config=.coveragerc --cov-report term-missing --cov . -ra ./tests)
+	@( cd src && python3 -m pytest  -ra ./tests)
 
 checks:
 	@make reqs
