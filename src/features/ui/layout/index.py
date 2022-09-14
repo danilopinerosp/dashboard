@@ -1,6 +1,6 @@
 """Dashboard app layout."""
 
-from dash import html, dcc
+from dash import dcc, html
 
 from features.ui.layout.header.index import header
 from features.ui.layout.leftbar.index import leftbar
