@@ -2,6 +2,7 @@
 
 ### What’s new
 - Create layout for dashboard app
+- Configure routes for dashboard app
 
 ### What’s been fixed
 
