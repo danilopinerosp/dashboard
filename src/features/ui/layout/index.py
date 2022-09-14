@@ -1,6 +1,6 @@
 """Dashboard app layout."""
 
-from dash import html
+from dash import html, dcc
 
 from features.ui.layout.header.index import header
 from features.ui.layout.leftbar.index import leftbar
@@ -12,7 +12,7 @@ def layout():
     content = html.Div([html.H1("Content")], id="page-content")
     return html.Div(
         [
-            # dcc.Location(id="url"),
+            dcc.Location(id="url"),
             header(),
             leftbar(),
             html.Div([topbar(), content], className="grid col-span-10 bg-sky-500/100"),
