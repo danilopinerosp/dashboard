@@ -55,5 +55,5 @@ jobs:
       run: make checks
       
     - name: dashboard_app - frontend - tests
-      run: check_tests
+      run: make check_tests
 
