@@ -3,6 +3,7 @@
 from dash import html
 from dash.dependencies import Input, Output
 
+from features.ui.layout.header.callbacks import update_page_title  # noqa: F401
 from pages.app import app
 from pages.error_404 import error_404
 from pages.finance import finance
