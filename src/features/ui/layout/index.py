@@ -13,9 +13,11 @@ def layout():
     return html.Div(
         [
             dcc.Location(id="url"),
-            header(),
             leftbar(),
-            html.Div([topbar(), content], className="grid col-span-10 bg-sky-500/100"),
+            html.Div(
+                [header(), topbar(), content],
+                className="grid col-span-10 bg-sky-500/100",
+            ),
         ],
         className="grid grid-cols-12",
     )
