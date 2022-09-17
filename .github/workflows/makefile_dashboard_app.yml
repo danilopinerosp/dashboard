@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ "main", "develop" ]
     paths:
-      - "dashboard_app"
+      - "src"
       - ".github/workflows/makefile_dashboard_app.yml"
       
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
       if: ${{ github.event.pull_request.base.sha }}
       run: |
         git fetch origin develop ${{ github.event.pull_request.base.sha }}
-        releases_files=$( git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- dashboard_app/RELEASE.md |xargs)
+        releases_files=$( git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- RELEASE.md |xargs)
         echo "RELEASE files changed:"
         echo $releases_files
         echo "-------"
@@ -52,8 +52,8 @@ jobs:
     ###############################
       
     - name: dashboard_app - frontend - checks
-      run: (cd dashboard_app && make checks)
+      run: make checks
       
     - name: dashboard_app - frontend - tests
-      run: (cd dashboard_app && make check_tests)
+      run: make check_tests
 
