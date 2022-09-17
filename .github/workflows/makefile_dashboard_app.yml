@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [ "main", "develop" ]
     paths:
-      - "dashboard_app"
+      - "src"
       - ".github/workflows/makefile_dashboard_app.yml"
       
   workflow_dispatch:
