@@ -15,7 +15,6 @@ on:
 # three job definition
 jobs:
   health-check-job: # health check job for testing and code formatting check
-
     runs-on: ubuntu-latest # os for running the job
     services:
       postgres: # need a postgres docker image to be booted
@@ -92,7 +91,7 @@ jobs:
           registry: gcr.io # gcr registry domain
           repository: ${{secrets.GKE_PROJECT}}/github-django-actions/app # GKE_PROJECT is out GCP Project id to be set as secret.
           tag_with_sha: true # this will tag our image with commit id. For example our image our be gcr.io/project-id/github-django-actions/app:sha-7865423 where 7865423 is the short sha of our commit.
-          
+
   deploy-job: # deploy job is for deploying our code to google cloud cluster.
     runs-on: ubuntu-latest
     needs: [package-job] # will require package-job to be successful for triggering
