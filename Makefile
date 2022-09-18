@@ -25,7 +25,7 @@ run_prod:
 	@(cd src && uvicorn main:dashboard_app --host 0.0.0.0 --port 3000)
 
 reqs:
-	@pip install -r requirements.in -U
+	@pip install -r requirements.txt -U
 
 black:
 	@black --check ./src
@@ -46,7 +46,7 @@ bandit:
 	@bandit -r ./src -x tests || true
 
 isort:
-	@isort --check --skip="./src/tests/*" --skip="./venv" .
+	@isort --check --skip="./src/tests/*" --skip="./.venv" .
 
 check_tests:
 	@( cd src && python3 -m pytest --cov-config=.coveragerc --cov-report term-missing --cov . -ra ./tests)
