@@ -25,32 +25,46 @@ run_prod:
 	@(cd src && uvicorn main:dashboard_app --host 0.0.0.0 --port 3000)
 
 reqs:
-	@pip install -r requirements.in -U
+	@pip install -r requirements.txt -U
 
 black:
-	@black --check ./src
+	@(black --check ./dashboard_app)
+	@(black --check ./production_dashboard)
+
 
 flake8: 
-	@flake8 --config .flake8 ./src --exclude=./src/tests
+#	@(flake8 --config .flake8 ./src --exclude=./src/tests)
+	@(flake8 --config .flake8 ./dashboard_app)
+	@(flake8 --config .flake8 ./production_dashboard)
 
 docstring:
-	@pydocstyle --match='(?!test_).*\.py' --convention=google ./src
+#	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./src)
+	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./dashboard_app)
+	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./production_dashboard)
 
 pylint:
-	@pylint --rcfile .pylintrc ./src
+#	@(pylint --rcfile .pylintrc ./src)
+	@(pylint --rcfile .pylintrc ./dashboard_app)
+	@(pylint --rcfile .pylintrc ./production_dashboard)
 
 safety:
-	@safety check || true ./src
+#	@(safety check || true ./src)
+	@(safety check || true ./dashboard_app)
+	@(safety check || true ./production_dashboard)
 
 bandit:
-	@bandit -r ./src -x tests || true
+#	@bandit -r ./src -x tests || true
+	@(bandit -r ./dashboard_app || true)
+	@(bandit -r ./production_dashboard -x tests || true)
+
 
 isort:
-	@isort --check --skip="./src/tests/*" --skip="./venv" .
+#	@(isort --check --skip="./src/tests/*" --skip="./.venv" .)
+	@(isort --check --skip="./.venv" .)
 
-check_tests:
-	@( cd src && python3 -m pytest --cov-config=.coveragerc --cov-report term-missing --cov . -ra ./tests)
-	@( cd src && python3 -m pytest  -ra ./tests)
+#check_tests:
+#	@( cd src && python3 -m pytest --cov-config=.coveragerc --cov-report term-missing --cov . -ra ./tests)
+#	@( cd src && python3 -m pytest  -ra ./tests)
 
 checks:
 	@make reqs
