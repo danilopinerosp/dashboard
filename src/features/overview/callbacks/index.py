@@ -1,1 +1,0 @@
-"""Dashboard app overview callbacks."""

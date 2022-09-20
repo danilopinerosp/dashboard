@@ -1,1 +1,0 @@
-"""Dashboard app operations callbacks."""
