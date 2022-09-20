@@ -1,3 +1,4 @@
-from django.test import TestCase
+"""Production dashboard tests."""
+# from django.test import TestCase
 
 # Create your tests here.
