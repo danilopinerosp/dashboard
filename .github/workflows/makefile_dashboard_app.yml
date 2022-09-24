@@ -51,6 +51,6 @@ jobs:
     - name: dashboard_app - frontend - checks
       run: make checks
       
-    - name: dashboard_app - frontend - tests
-      run: make check_tests
+ #   - name: dashboard_app - frontend - tests
+ #     run: make check_tests
       
