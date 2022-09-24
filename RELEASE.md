@@ -7,6 +7,7 @@
 - Create models for production dashboard database
 
 ### What’s been fixed
+- fix issue with github actions
 
 ### What’s been improved
 
