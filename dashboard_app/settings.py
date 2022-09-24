@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "production_dashboard.apps.ProductionDashboardConfig",
+    "market_data.apps.MarketDataConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

@@ -1,4 +1,4 @@
-"""Production Dashboard urls."""
+"""Market Data urls."""
 from django.urls import path
 
 from . import views

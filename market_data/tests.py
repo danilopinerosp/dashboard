@@ -1,4 +1,4 @@
-"""Production dashboard tests."""
+"""Market Data tests."""
 # from django.test import TestCase
 
 # Create your tests here.
