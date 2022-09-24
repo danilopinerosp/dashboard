@@ -3,10 +3,6 @@ name: Dashboard App CI
 on:
   pull_request:
     branches: [ master, develop ]
-    paths:
-      - ".dashboard_app/"
-      - ".production_dashboard/"
-      - ".github/workflows/makefile_dashboard_app.yml"
       
   workflow_dispatch:
 
