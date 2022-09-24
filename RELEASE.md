@@ -4,6 +4,7 @@
 - Create layout for dashboard app
 - Configure routes for dashboard app
 - Configure production dashboard app
+- Create models for production dashboard database
 
 ### What’s been fixed
 - fix issue with github actions

@@ -29,33 +29,33 @@ reqs:
 
 black:
 	@(black --check ./dashboard_app)
-	@(black --check ./production_dashboard)
+	@(black --check ./market_data)
 
 
 flake8: 
 #	@(flake8 --config .flake8 ./src --exclude=./src/tests)
 	@(flake8 --config .flake8 ./dashboard_app)
-	@(flake8 --config .flake8 ./production_dashboard)
+	@(flake8 --config .flake8 ./market_data)
 
 docstring:
 #	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./src)
 	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./dashboard_app)
-	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./production_dashboard)
+	@(pydocstyle --match='(?!test_).*\.py' --convention=google ./market_data)
 
 pylint:
 #	@(pylint --rcfile .pylintrc ./src)
 	@(pylint --rcfile .pylintrc ./dashboard_app)
-	@(pylint --rcfile .pylintrc ./production_dashboard)
+	@(pylint --rcfile .pylintrc ./market_data)
 
 safety:
 #	@(safety check || true ./src)
 	@(safety check || true ./dashboard_app)
-	@(safety check || true ./production_dashboard)
+	@(safety check || true ./market_data)
 
 bandit:
 #	@bandit -r ./src -x tests || true
 	@(bandit -r ./dashboard_app || true)
-	@(bandit -r ./production_dashboard -x tests || true)
+	@(bandit -r ./market_data -x tests || true)
 
 
 isort:

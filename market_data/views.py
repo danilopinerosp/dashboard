@@ -1,4 +1,4 @@
-"""Production dashboard views."""
+"""Market Data views."""
 # from django.shortcuts import render
 from django.http import HttpResponse
 
