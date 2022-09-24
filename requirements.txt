@@ -59,8 +59,6 @@ six==1.16.0
 sqlparse==0.4.2
 systemd-python==234
 tenacity==8.0.1
-ubuntu-advantage-tools==27.7
-ubuntu-drivers-common==0.0.0
 ufw==0.36.1
 unattended-upgrades==0.1
 urllib3==1.26.5
