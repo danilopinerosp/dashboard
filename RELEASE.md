@@ -6,6 +6,7 @@
 - Configure production dashboard app
 
 ### What’s been fixed
+- fix issue with github actions
 
 ### What’s been improved
 
