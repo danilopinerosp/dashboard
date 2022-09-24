@@ -6,3 +6,6 @@ isort==5.10.1
 flake8==5.0.4
 black==22.8.0
 pydocstyle==6.1.1
+bandit==1.7.4
+safety==2.2.0
+reqs==0.0.2
